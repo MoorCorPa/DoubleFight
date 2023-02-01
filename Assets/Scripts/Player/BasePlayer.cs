@@ -4,35 +4,43 @@ using UnityEngine;
 
 public class BasePlayer : MonoBehaviour
 {
-    const double maxHealth = 100;
-    double basehealth;
+    private const double maxHealth = 100;
+    public double basehealth;
+    public int playerInt = 0;
+
+    private PlayerControl control;
+
+    virtual public void OnEnable()
+    {
+        control = KeySetter.input;
+    }
 
     virtual public void Start()
     {
-        basehealth= maxHealth;
+        basehealth = maxHealth;
     }
 
-    virtual public void movement()
+    virtual public void OnMove()
     {
         if (basehealth <= 0) return;
     }
 
-    virtual public void jump()
+    virtual public void OnJump()
     {
 
     }
 
-    virtual public void attack()
+    virtual public void OnAttack()
     {
 
     }
 
-    virtual public void ora()
+    virtual public void OnORa()
     {
 
     }
 
-    virtual public void ult()
+    virtual public void OnUlt()
     {
 
     }

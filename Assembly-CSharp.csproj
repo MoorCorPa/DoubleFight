@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\BasePlayer.cs" />
     <Compile Include="Assets\Settings\InputSystem\PlayerControl.cs" />
+    <Compile Include="Assets\Settings\InputSystem\KeySetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

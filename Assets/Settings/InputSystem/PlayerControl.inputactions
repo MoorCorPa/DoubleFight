@@ -135,12 +135,39 @@
         },
         {
             "name": "PlayerBlue",
-            "id": "28a965b7-a3a3-4ca2-9901-3b3bf9b523c4",
+            "id": "d6cd0768-7691-4c1f-8a8d-141b8ee41735",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "0892a245-421f-46e0-b024-a75b2bc42fe7",
+                    "name": "Move",
+                    "type": "PassThrough",
+                    "id": "0eb7f700-0f8c-4092-bf28-90d94e2f7f22",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "PassThrough",
+                    "id": "6fe6a685-10e1-4112-89b9-a0fa9ae76523",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "PassThrough",
+                    "id": "5affa000-d764-4621-9203-3ce9a5ec216c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ora",
+                    "type": "PassThrough",
+                    "id": "00bb1e34-4276-4ddc-895f-6e6c21d33b98",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -149,13 +176,90 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "28faeabf-0ec1-4a32-be36-232f29289a42",
-                    "path": "",
+                    "name": "2D Vector",
+                    "id": "a5777b56-c7ca-4982-bb30-20644cf1fe34",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "9f9eb7c0-9417-4df9-9fc4-8d897a69c837",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "6e0e2024-6b68-448d-a8ec-f470e3628e8c",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "1ec7568a-4f10-4840-aca4-4f890ef25ef5",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "d548f93b-7706-48d7-b214-91e9a1a462ce",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "bf6684a8-8423-4c96-b6c1-40aea080078a",
+                    "path": "<Keyboard>/comma",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea7074e6-03f6-4557-9fd2-94708c8ea744",
+                    "path": "<Keyboard>/period",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "021831bc-55f7-419c-82cb-e0e57fa0e8e8",
+                    "path": "<Keyboard>/slash",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ora",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

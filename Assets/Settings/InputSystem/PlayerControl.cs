@@ -157,12 +157,39 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         },
         {
             ""name"": ""PlayerBlue"",
-            ""id"": ""28a965b7-a3a3-4ca2-9901-3b3bf9b523c4"",
+            ""id"": ""d6cd0768-7691-4c1f-8a8d-141b8ee41735"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""0892a245-421f-46e0-b024-a75b2bc42fe7"",
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""0eb7f700-0f8c-4092-bf28-90d94e2f7f22"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""6fe6a685-10e1-4112-89b9-a0fa9ae76523"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""5affa000-d764-4621-9203-3ce9a5ec216c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ora"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""00bb1e34-4276-4ddc-895f-6e6c21d33b98"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -171,13 +198,90 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""28faeabf-0ec1-4a32-be36-232f29289a42"",
-                    ""path"": """",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""a5777b56-c7ca-4982-bb30-20644cf1fe34"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""9f9eb7c0-9417-4df9-9fc4-8d897a69c837"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""6e0e2024-6b68-448d-a8ec-f470e3628e8c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1ec7568a-4f10-4840-aca4-4f890ef25ef5"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""d548f93b-7706-48d7-b214-91e9a1a462ce"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf6684a8-8423-4c96-b6c1-40aea080078a"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea7074e6-03f6-4557-9fd2-94708c8ea744"",
+                    ""path"": ""<Keyboard>/period"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""021831bc-55f7-419c-82cb-e0e57fa0e8e8"",
+                    ""path"": ""<Keyboard>/slash"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ora"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -194,7 +298,10 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         m_PlayerRed_Ora = m_PlayerRed.FindAction("Ora", throwIfNotFound: true);
         // PlayerBlue
         m_PlayerBlue = asset.FindActionMap("PlayerBlue", throwIfNotFound: true);
-        m_PlayerBlue_Newaction = m_PlayerBlue.FindAction("New action", throwIfNotFound: true);
+        m_PlayerBlue_Move = m_PlayerBlue.FindAction("Move", throwIfNotFound: true);
+        m_PlayerBlue_Attack = m_PlayerBlue.FindAction("Attack", throwIfNotFound: true);
+        m_PlayerBlue_Jump = m_PlayerBlue.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerBlue_Ora = m_PlayerBlue.FindAction("Ora", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -311,12 +418,18 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
     // PlayerBlue
     private readonly InputActionMap m_PlayerBlue;
     private IPlayerBlueActions m_PlayerBlueActionsCallbackInterface;
-    private readonly InputAction m_PlayerBlue_Newaction;
+    private readonly InputAction m_PlayerBlue_Move;
+    private readonly InputAction m_PlayerBlue_Attack;
+    private readonly InputAction m_PlayerBlue_Jump;
+    private readonly InputAction m_PlayerBlue_Ora;
     public struct PlayerBlueActions
     {
         private @PlayerControl m_Wrapper;
         public PlayerBlueActions(@PlayerControl wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_PlayerBlue_Newaction;
+        public InputAction @Move => m_Wrapper.m_PlayerBlue_Move;
+        public InputAction @Attack => m_Wrapper.m_PlayerBlue_Attack;
+        public InputAction @Jump => m_Wrapper.m_PlayerBlue_Jump;
+        public InputAction @Ora => m_Wrapper.m_PlayerBlue_Ora;
         public InputActionMap Get() { return m_Wrapper.m_PlayerBlue; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -326,16 +439,34 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerBlueActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnNewaction;
+                @Move.started -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnMove;
+                @Attack.started -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnAttack;
+                @Jump.started -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnJump;
+                @Ora.started -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnOra;
+                @Ora.performed -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnOra;
+                @Ora.canceled -= m_Wrapper.m_PlayerBlueActionsCallbackInterface.OnOra;
             }
             m_Wrapper.m_PlayerBlueActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Ora.started += instance.OnOra;
+                @Ora.performed += instance.OnOra;
+                @Ora.canceled += instance.OnOra;
             }
         }
     }
@@ -349,6 +480,9 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
     }
     public interface IPlayerBlueActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnOra(InputAction.CallbackContext context);
     }
 }
